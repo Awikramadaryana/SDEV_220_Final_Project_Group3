@@ -1,40 +1,46 @@
 cafe_inventory = {
-    "coffee_beans": {
+    1 : {
+        "name" : "coffee_beans",
         "category": "ingredient",
         "stock": 50,
         "unit": "kg",
         "supplier": "Local Roasters",
         "reorder_level": 10
     },
-    "tea_bags": {
+    2 : {
+        "name" : "tea_bags",
         "category": "ingredient",
         "stock": 200,
         "unit": "pieces",
         "supplier": "Tea Co.",
         "reorder_level": 50
     },
-    "milk": {
+    3: {
+        "name" : "milk",
         "category": "ingredient",
         "stock": 30,
         "unit": "liters",
         "supplier": "Dairy Farm",
         "reorder_level": 5
     },
-    "sugar": {
+    4: {
+        "name" : "sugar",
         "category": "ingredient",
         "stock": 40,
         "unit": "kg",
         "supplier": "Sweet Supply",
         "reorder_level": 8
     },
-    "croissant": {
+    5: {
+        "name" : "croissant",
         "category": "pastry",
         "price": 4.00,
         "stock": 25,
         "boxed": False,
         "reorder_level": 5
     },
-    "muffin_box": {
+    6 : {
+        "name" : "muffin_box",
         "category": "pastry",
         "price": 15.00,
         "stock": 10,
@@ -42,21 +48,24 @@ cafe_inventory = {
         "items_per_box": 6,
         "reorder_level": 2
     },
-    "sandwich": {
+    7 : {
+        "name" : "sandwich",
         "category": "food",
         "price": 6.50,
         "stock": 20,
         "boxed": False,
         "reorder_level": 5
     },
-    "paper_cups": {
+    8 : {
+        "name" : "paper cups",
         "category": "supply",
         "stock": 500,
         "unit": "pieces",
         "supplier": "Packaging Inc.",
         "reorder_level": 100
     },
-    "napkins": {
+    9 : {
+        "name" : "napkins",
         "category": "supply",
         "stock": 1000,
         "unit": "pieces",
