@@ -19,7 +19,7 @@ def main():
     mainMenu = tk.Tk()
     mainMenu.title("Pong")
     mainMenu.geometry("500x500")
-    mainMenu['background'] = "black"
+    mainMenu['background'] = "white"
 
     # creating welcome label and buttons
     welcomeMessage = tk.Label(mainMenu, text="Welcome to Coffee Shop!")
