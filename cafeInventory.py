@@ -1,6 +1,7 @@
 cafe_inventory = {
     1 : {
         "name" : "coffee_beans",
+        "item_code" : 1,
         "category": "ingredient",
         "stock": 50,
         "unit": "kg",
@@ -9,6 +10,7 @@ cafe_inventory = {
     },
     2 : {
         "name" : "tea_bags",
+        "item_code" : 2,
         "category": "ingredient",
         "stock": 200,
         "unit": "pieces",
@@ -17,6 +19,7 @@ cafe_inventory = {
     },
     3: {
         "name" : "milk",
+        "item_code" : 3,
         "category": "ingredient",
         "stock": 30,
         "unit": "liters",
@@ -25,6 +28,7 @@ cafe_inventory = {
     },
     4: {
         "name" : "sugar",
+        "item_code" : 4,
         "category": "ingredient",
         "stock": 40,
         "unit": "kg",
@@ -33,6 +37,7 @@ cafe_inventory = {
     },
     5: {
         "name" : "croissant",
+        "item_code" : 5,
         "category": "pastry",
         "price": 4.00,
         "stock": 25,
@@ -41,6 +46,7 @@ cafe_inventory = {
     },
     6 : {
         "name" : "muffin_box",
+        "item_code" : 6,
         "category": "pastry",
         "price": 15.00,
         "stock": 10,
@@ -50,6 +56,7 @@ cafe_inventory = {
     },
     7 : {
         "name" : "sandwich",
+        "item_code" : 7,
         "category": "food",
         "price": 6.50,
         "stock": 20,
@@ -58,6 +65,7 @@ cafe_inventory = {
     },
     8 : {
         "name" : "paper cups",
+        "item_code" : 8,
         "category": "supply",
         "stock": 500,
         "unit": "pieces",
@@ -66,6 +74,7 @@ cafe_inventory = {
     },
     9 : {
         "name" : "napkins",
+        "item_code" : 9,
         "category": "supply",
         "stock": 1000,
         "unit": "pieces",

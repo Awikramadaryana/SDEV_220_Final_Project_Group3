@@ -30,5 +30,5 @@ class inventoryMenu(tk.Tk):
         tk.Label(self, text="Pick an Inventory Item").pack()
         tk.OptionMenu(self, selectedOption, *stockItems).pack()
         tk.Button(self, text="Show Data for Item").pack()
-        lbl = tk.Label(self, text=)
+        #lbl = tk.Label(self, text=)
         
