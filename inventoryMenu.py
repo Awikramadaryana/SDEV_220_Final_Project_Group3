@@ -15,20 +15,48 @@ class inventoryMenu(tk.Tk):
         self.geometry("500x500")
 
         # prepping options for the drop down menu
-        stockItems = [cafe_inventory[1]["name"], cafe_inventory[2]["name"], cafe_inventory[3]["name"], cafe_inventory[4]["name"],
+        self.stockItems = [cafe_inventory[1]["name"], cafe_inventory[2]["name"], cafe_inventory[3]["name"], cafe_inventory[4]["name"],
                       cafe_inventory[5]["name"], cafe_inventory[6]["name"], cafe_inventory[7]["name"], cafe_inventory[8]["name"],
                       cafe_inventory[9]["name"]]
-        selectedOption = tk.StringVar(self)
-        selectedOption.set(stockItems[0])
-        selectedData = tk.IntVar(self)
-
-        def updateMenu():
-            print("Hello world")
+        self.selectedOption = tk.StringVar(self)
+        self.selectedOption.set(self.stockItems[0])
+        self.selectedData = tk.IntVar(self)
+        self.selectedIndex = 0
 
         # Actual Menu
         tk.Label(self, text="Welcome to Inventory Management").pack()
         tk.Label(self, text="Pick an Inventory Item").pack()
-        tk.OptionMenu(self, selectedOption, *stockItems).pack()
-        tk.Button(self, text="Show Data for Item").pack()
+        tk.OptionMenu(self, self.selectedOption, *self.stockItems, command=self.updateMenu()).pack()
+        #tk.Button(self, text="Show Data for Item").pack()
         # lbl = tk.Label(self, text=)
+
+    def create_widgets(self):
+        paddings = {'padx': 5, 'pady': 5}
+
+
+    def updateMenu(self):
+        print("Hello world")
+        selectedItem = self.selectedOption.get()
+        print(selectedItem)
+        """match selectedOption:
+                case "coffee_beans":
+                    selectedIndex == 1
+                case "tea_bags":
+                    selectedIndex == 2
+                case "milk":
+                    selectedIndex == 3
+                case "sugar":
+                    selectedIndex == 4
+                case "croissant":
+                    selectedIndex == 5
+                case "muffin_box":
+                    selectedIndex == 6
+                case "sandwich":
+                    selectedIndex == 7
+                case "paper_cups":
+                    selectedIndex == 8
+                case "napkins":
+                    selectedIndex == 9
+            print(selectedIndex)
+            """
         
