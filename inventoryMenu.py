@@ -35,7 +35,8 @@ class inventoryMenu(tk.Tk):
         tk.Label(self, text="Welcome to Inventory Management").pack()
         tk.Label(self, text="Pick an Inventory Item").pack()
         tk.OptionMenu(self, self.selectedOption, *self.stock_items, command= self.updateMenu()).pack()
-        self.output_label = tk.Label(self).pack()
+        self.output_label = tk.Label(self, text="Item Pending")
+        self.output_label.pack()
         #tk.Button(self, text="Show Data for Item").pack()
         # lbl = tk.Label(self, text=)
 
