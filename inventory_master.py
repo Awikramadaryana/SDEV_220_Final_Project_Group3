@@ -1,7 +1,8 @@
 # Class that defines what an inventory item is
 class InventoryItem:
-    def __init__(self, name, stock, reorder_level):
+    def __init__(self, name, full_stock, stock, reorder_level):
         self.name = name
+        self.full_stock = full_stock
         self.stock = stock
         self.reorder_level = reorder_level
 
@@ -25,8 +26,8 @@ class CafeInventory:
         self.cafe_inventory = {}
         self.inventoryCount = 0
 
-    def add_item(self, name, stock, reorder_level):
-        self.cafe_inventory[name] = InventoryItem(name, stock, reorder_level)
+    def add_item(self, name, full_stock, stock, reorder_level):
+        self.cafe_inventory[name] = InventoryItem(name, full_stock, stock, reorder_level)
         self.inventoryCount += self.inventoryCount
 
     def update_item(self, name, stock=None, reorder_level=None):
