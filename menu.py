@@ -9,6 +9,7 @@ Description: Program is designed to play a version of Pong that allows players
 
 import tkinter as tk
 import inventoryMenu
+from inventory_master import CafeInventory, InventoryItem, inventory
 
 """
 This module actually initializes the main menu with the 3 main buttons to start the game
@@ -38,4 +39,12 @@ def main():
     
 
 if __name__ == '__main__':
+    inventory.add_item("Coffee Beans", 50, 10)
+    inventory.add_item("Milk", 20, 5)
+    inventory.add_item("Sugar", 30, 8)
+    inventory.display_inventory()
+    #current_inventory = CafeInventory()
+    #current_inventory.add_item("Coffee Beans", 50, 10)
+    #current_inventory.add_item("Milk", 20, 5)
+    #current_inventory.add_item("Sugar", 30, 8)
     main()

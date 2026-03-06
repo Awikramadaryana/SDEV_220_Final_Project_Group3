@@ -23,9 +23,11 @@ class CafeInventory:
     def __init__(self):
         # SAME name you used before
         self.cafe_inventory = {}
+        self.inventoryCount = 0
 
     def add_item(self, name, stock, reorder_level):
         self.cafe_inventory[name] = InventoryItem(name, stock, reorder_level)
+        self.inventoryCount += self.inventoryCount
 
     def update_item(self, name, stock=None, reorder_level=None):
         if name in self.cafe_inventory:
@@ -44,10 +46,13 @@ class CafeInventory:
     def display_inventory(self):
         for item in self.cafe_inventory.values():
             print(f"{item.name} - Stock: {item.stock}, Reorder Level: {item.reorder_level}")
+            
+            
+inventory = CafeInventory()
 
 
 # --------- Program Starts Here ---------
-
+"""
 inventory = CafeInventory()
 
 inventory.add_item("Coffee Beans", 50, 10)
@@ -56,7 +61,9 @@ inventory.add_item("Sugar", 30, 8)
 
 inventory.display_inventory()
 
+
 inventory.remove_stock = inventory.cafe_inventory["Coffee Beans"].remove_stock
 inventory.remove_stock(45)
 
 inventory.check_reorders()
+"""

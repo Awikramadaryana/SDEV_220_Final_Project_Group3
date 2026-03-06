@@ -64,7 +64,7 @@ cafe_inventory = {
         "reorder_level": 5
     },
     8 : {
-        "name" : "paper cups",
+        "name" : "paper_cups",
         "item_code" : 8,
         "category": "supply",
         "stock": 500,
