@@ -21,20 +21,20 @@ class inventoryMenu(tk.Tk):
             print(name)
 
         # prepping options for the drop down menu
-        """
-        self.stockItems = [cafe_inventory[1]["name"], cafe_inventory[2]["name"], cafe_inventory[3]["name"], cafe_inventory[4]["name"],
-                      cafe_inventory[5]["name"], cafe_inventory[6]["name"], cafe_inventory[7]["name"], cafe_inventory[8]["name"],
-                      cafe_inventory[9]["name"]]
-        """
         self.selectedOption = tk.StringVar(self)
-        self.selectedOption.set(self.stock_items[i])
+        #self.selectedOption.set(self.stock_items[0])
+        self.selectedOption.set("Inventory At a Glance")
         self.selectedData = tk.IntVar(self)
         self.selectedIndex = 0
 
         # Actual Menu
         tk.Label(self, text="Welcome to Inventory Management").pack()
         tk.Label(self, text="Pick an Inventory Item").pack()
-        tk.OptionMenu(self, self.selectedOption, *self.stock_items, command= self.updateMenu()).pack()
+        tk.OptionMenu(self, self.selectedOption, *self.stock_items, command=self.updateMenu).pack()
+        if self.selectedOption == "Inventory at a Flance":
+            for i, full_stock in enumerate(inventory.cafe_inventory.keys()):
+                print("The quick inventory statement was called")
+            self.quick_inventory = tk.Label.config()
         self.output_label = tk.Label(self, text="Item Pending")
         self.output_label.pack()
         #tk.Button(self, text="Show Data for Item").pack()
@@ -43,31 +43,16 @@ class inventoryMenu(tk.Tk):
     def create_widgets(self):
         paddings = {'padx': 5, 'pady': 5}
 
+    # forgot for updateMenu that you can call a command without passing the info from tk.OptionMenu.
+    def updateMenu(self, selection):
+        print("Tesing updateMenu has been called")
+        selected_item = inventory.cafe_inventory[selection]
+        print(selected_item)
+        self.output_label.config(text=f'You selected: {selection}')
 
-    def updateMenu(self):
-        print("Hello world")
-        selectedItem = self.selectedOption.get()
-        print(selectedItem)
-        self.output_label = (f'You selected: {self.selectedOption.get()}')
-        """match selectedOption:
-                case "coffee_beans":
-                    selectedIndex == 1
-                case "tea_bags":
-                    selectedIndex == 2
-                case "milk":
-                    selectedIndex == 3
-                case "sugar":
-                    selectedIndex == 4
-                case "croissant":
-                    selectedIndex == 5
-                case "muffin_box":
-                    selectedIndex == 6
-                case "sandwich":
-                    selectedIndex == 7
-                case "paper_cups":
-                    selectedIndex == 8
-                case "napkins":
-                    selectedIndex == 9
-            print(selectedIndex)
-            """
-        
+        #Creating formatted output
+        output_text = (f"Item: {selected_item.name}\n"
+                       f"Full Stock: {selected_item.full_stock}\n"
+                       f"Current Stock: {selected_item.stock}\n"
+                       f"Reorder Level: {selected_item.reorder_level}\n")
+        self.output_label.config(text=output_text)

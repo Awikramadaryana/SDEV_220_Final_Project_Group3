@@ -39,9 +39,9 @@ def main():
     
 
 if __name__ == '__main__':
-    inventory.add_item("Coffee Beans", 50, 10)
-    inventory.add_item("Milk", 20, 5)
-    inventory.add_item("Sugar", 30, 8)
+    inventory.add_item("Coffee Beans", 50, 25, 10)
+    inventory.add_item("Milk", 20, 15, 5)
+    inventory.add_item("Sugar", 30, 20, 8)
     inventory.display_inventory()
     #current_inventory = CafeInventory()
     #current_inventory.add_item("Coffee Beans", 50, 10)
