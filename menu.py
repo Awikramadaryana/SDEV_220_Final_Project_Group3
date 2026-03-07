@@ -18,7 +18,7 @@ change the name of the players, and to close the game.
 
 def main():
     mainMenu = tk.Tk()
-    mainMenu.title("Pong")
+    mainMenu.title("Cafe Inventory")
     mainMenu.geometry("500x500")
     mainMenu['background'] = "white"
 
