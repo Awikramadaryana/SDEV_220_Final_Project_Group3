@@ -18,13 +18,13 @@ change the name of the players, and to close the game.
 
 def main():
     mainMenu = tk.Tk()
-    mainMenu.title("Pong")
+    mainMenu.title("Cafe Inventory")
     mainMenu.geometry("500x500")
     mainMenu['background'] = "white"
 
     # creating welcome label and buttons
     welcomeMessage = tk.Label(mainMenu, text="Welcome to Coffee Shop!")
-    orderButton = tk.Button(mainMenu, text="Order")
+    orderButton = tk.Button(mainMenu, text="Order", )
     inventoryButton = tk.Button(mainMenu, text="Inventory", command=lambda: inventoryMenu.inventoryMenu())
     settingsButton = tk.Button(mainMenu, text ="Settings")
     exitButton = tk.Button(mainMenu, text="Exit", command=mainMenu.quit)
