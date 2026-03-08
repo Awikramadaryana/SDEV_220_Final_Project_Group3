@@ -5,6 +5,7 @@ import tkinter as tk
 from settingsMenu import default_settings
 from tkinter import ttk
 from inventory_master import InventoryItem as inv
+from inventory_master import default_inventory
 
 class OrderMenu(tk.Tk):
     def __init__(self, screenName = None, baseName = None, className = "Tk", useTk = True, sync = False, use = None):
@@ -37,8 +38,9 @@ class OrderMenu(tk.Tk):
         self.qtyEntry.pack()
 
         #Submit button
-        sub_btn=tk.Button(self,text = 'Submit', command = submit)
+        sub_btn=tk.Button(self,text = 'Submit', command = self.submit)
         sub_btn.pack()
+        
 
     #Function to submit currently held variables into txt file
     def submit(self):
@@ -53,7 +55,7 @@ class OrderMenu(tk.Tk):
         #with open("OrderList.txt", "a") as f:
         #    f.write(name)
 
-        inv.add_stock(name, qty)
+        default_inventory.add_stock(name, int(qty))
 
         print("The item is : " + name)
         print("The Quantity is : " + qty)
