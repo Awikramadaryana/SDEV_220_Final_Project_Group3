@@ -45,6 +45,10 @@ class inventoryMenu(tk.Tk):
         self.output_label.pack()
         #tk.Button(self, text="Show Data for Item").pack()
         # lbl = tk.Label(self, text=)
+        self.item_label = tk.Label(self)
+        self.full_stock_label = tk.Label(self)
+        self.current_stock_label = tk.Label(self)
+        self.reorder_level_label = tk.Label(self)
 
     def create_widgets(self):
         paddings = {'padx': 5, 'pady': 5}
