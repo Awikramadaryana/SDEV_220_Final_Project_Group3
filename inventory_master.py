@@ -43,13 +43,17 @@ class CafeInventory:
         for item in self.cafe_inventory.values():
             if item.needs_reorder():
                 print(f"{item.name} needs to be reordered!")
+                display_text = (f"{item.name} needs to be reordered!")
+                return display_text
 
     def display_inventory(self):
         for item in self.cafe_inventory.values():
             print(f"{item.name} - Stock: {item.stock}, Reorder Level: {item.reorder_level}")
+            display_text = (f"{item.name} - Stock: {item.stock}, Reorder Level: {item.reorder_level}")
+            return display_text
             
             
-inventory = CafeInventory()
+default_inventory = CafeInventory()
 
 
 # --------- Program Starts Here ---------
