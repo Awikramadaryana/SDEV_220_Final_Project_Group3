@@ -1,3 +1,6 @@
+# Inventory Ordering System
+# This will receive user input through textboxes and write to a text file
+
 import tkinter as tk
 from tkinter import ttk
 
@@ -24,8 +27,34 @@ codeEntry.pack()
 itemQty.pack()
 qtyEntry.pack()
 
+def fetch(entry, label):
+    label['text'] = entry.get()
+
+def submit():
+
+    item=itemCode.get()
+    qty=itemQty.get()
+    
+    #Write input to file
+    with open("OrderList.txt", "a") as f:
+        f.write(item)
+    with open("OrderList.txt", "a") as f:
+        f.write(qty)
+
+    print("The item is : " + item)
+    print("The Quantity is : " + qty)
+    
+    itemCode.set("")
+    itemQty.set("")
 
 
+#open and read the file after the appending:
+with open("orderList.txt") as f:
+  print(f.read())
 
-## open window
+#Submit button
+sub_btn=tk.Button(root,text = 'Submit', command = submit)
+sub_btn.pack()
+
+## Run Program
 root.mainloop()
