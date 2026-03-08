@@ -22,8 +22,11 @@ class inventoryMenu(tk.Tk):
 
         # prepping options for the drop down menu
         self.selectedOption = tk.StringVar(self)
-        #self.selectedOption.set(self.stock_items[0])
-        self.selectedOption.set("Inventory At a Glance")
+        self.selectedOption.set(self.stock_items[0])
+        
+        # leftover from attempt to make a quick inventory menu, decided against it for the sake of getting project completed
+        # Todo: Figure out how to make this work alter
+        #self.selectedOption.set("Inventory At a Glance")
         self.selectedData = tk.IntVar(self)
         self.selectedIndex = 0
 
@@ -49,6 +52,9 @@ class inventoryMenu(tk.Tk):
         selected_item = inventory.cafe_inventory[selection]
         print(selected_item)
         self.output_label.config(text=f'You selected: {selection}')
+        need_to_order = False
+        if selected_item.stock <= selected_item.reorder_level:
+            need_to_order = True
 
         #Creating formatted output
         output_text = (f"Item: {selected_item.name}\n"
