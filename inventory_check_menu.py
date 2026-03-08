@@ -8,6 +8,7 @@ Purpose: Provide Inventory interaction menu
 import tkinter as tk
 from cafeInventory import cafe_inventory
 from inventory_master import CafeInventory, InventoryItem, inventory
+from settingsMenu import default_settings
 
 class inventoryMenu(tk.Tk):
     def __init__(self, screenName = None, baseName = None, className = "Tk", useTk = True, sync = False, use = None):
@@ -15,6 +16,8 @@ class inventoryMenu(tk.Tk):
         self.title("Inventory Menu")
         self.geometry("500x500")
         self.stock_items = []
+        self.configure(bg=default_settings.background)
+        
         
         for i, name in enumerate(inventory.cafe_inventory.keys()):
             self.stock_items.append(name)
