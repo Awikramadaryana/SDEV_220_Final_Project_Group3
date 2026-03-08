@@ -10,6 +10,7 @@ Description: Program is designed to play a version of Pong that allows players
 import tkinter as tk
 import inventory_check_menu
 import inventoryOrder
+import addItem
 from inventory_master import CafeInventory, InventoryItem, default_inventory
 import settingsMenu, inventoryOrder
 from settingsMenu import default_settings
@@ -28,6 +29,7 @@ def main():
     # creating welcome label and buttons
     welcomeMessage = tk.Label(mainMenu, text="Welcome to Coffee Shop!")
     orderButton = tk.Button(mainMenu, text="Order Restock", command=lambda: inventoryOrder.OrderMenu())
+    addButton = tk.Button(mainMenu, text= "Add new Item", command=lambda: addItem.addMenu())
     inventoryButton = tk.Button(mainMenu, text="Inventory", command=lambda: inventory_check_menu.inventoryMenu())
     settingsButton = tk.Button(mainMenu, text ="Settings", command=lambda: settingsMenu.SettingsMenu())
     exitButton = tk.Button(mainMenu, text="Exit", command=mainMenu.quit)
@@ -35,6 +37,7 @@ def main():
     
     welcomeMessage.pack()
     orderButton.pack()
+    addButton.pack()
     inventoryButton.pack()
     settingsButton.pack()
     exitButton.pack()
