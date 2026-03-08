@@ -8,8 +8,10 @@ Description: Program is designed to play a version of Pong that allows players
 
 
 import tkinter as tk
-import inventoryMenu
+import inventory_check_menu
 from inventory_master import CafeInventory, InventoryItem, inventory
+import settingsMenu
+from settingsMenu import default_settings
 
 """
 This module actually initializes the main menu with the 3 main buttons to start the game
@@ -20,13 +22,13 @@ def main():
     mainMenu = tk.Tk()
     mainMenu.title("Cafe Inventory")
     mainMenu.geometry("500x500")
-    mainMenu['background'] = "white"
+    mainMenu['background'] = default_settings.background
 
     # creating welcome label and buttons
     welcomeMessage = tk.Label(mainMenu, text="Welcome to Coffee Shop!")
     orderButton = tk.Button(mainMenu, text="Order", )
-    inventoryButton = tk.Button(mainMenu, text="Inventory", command=lambda: inventoryMenu.inventoryMenu())
-    settingsButton = tk.Button(mainMenu, text ="Settings")
+    inventoryButton = tk.Button(mainMenu, text="Inventory", command=lambda: inventory_check_menu.inventoryMenu())
+    settingsButton = tk.Button(mainMenu, text ="Settings", command=lambda: settingsMenu.SettingsMenu())
     exitButton = tk.Button(mainMenu, text="Exit", command=mainMenu.quit)
 
     
