@@ -27,8 +27,21 @@ class OrderMenu(tk.Tk):
         self.nameEntry = ttk.Entry(self, textvariable = self.nameStr)
         self.qtyEntry = ttk.Entry(self, textvariable = self.qtyStr)
 
+        #UI elements
+        self.orderLabel.pack()
+
+        self.nameLabel.pack()
+        self.nameEntry.pack()
+
+        self.itemQty.pack()
+        self.qtyEntry.pack()
+
+        #Submit button
+        sub_btn=tk.Button(self,text = 'Submit', command = submit)
+        sub_btn.pack()
+
     #Function to submit currently held variables into txt file
-    def submit():
+    def submit(self):
         name = self.nameStr.get()
         qty=self.qtyStr.get()
         
@@ -46,26 +59,5 @@ class OrderMenu(tk.Tk):
         print("The Quantity is : " + qty)
         
         
-        nameStr.set("")
-        qtyStr.set("")
-
-
-    #open and read the file after the appending:
-    with open("orderList.txt") as f:
-    print(f.read())
-
-    #Variable calls
-    orderLabel.pack()
-
-    nameLabel.pack()
-    nameEntry.pack()
-
-    itemQty.pack()
-    qtyEntry.pack()
-
-    #Submit button
-    sub_btn=tk.Button(root,text = 'Submit', command = submit)
-    sub_btn.pack()
-
-    ## Run Program
-    root.mainloop()
+        self.nameStr.set("")
+        self.qtyStr.set("")
