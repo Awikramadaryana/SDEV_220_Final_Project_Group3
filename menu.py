@@ -9,7 +9,7 @@ Description: Program is designed to play a version of Pong that allows players
 
 import tkinter as tk
 import inventory_check_menu
-from inventory_master import CafeInventory, InventoryItem, inventory
+from inventory_master import CafeInventory, InventoryItem, default_inventory
 import settingsMenu
 from settingsMenu import default_settings
 
@@ -41,10 +41,10 @@ def main():
     
 
 if __name__ == '__main__':
-    inventory.add_item("Coffee Beans", 50, 25, 10)
-    inventory.add_item("Milk", 20, 15, 5)
-    inventory.add_item("Sugar", 30, 20, 8)
-    inventory.display_inventory()
+    default_inventory.add_item("Coffee Beans", 50, 25, 10)
+    default_inventory.add_item("Milk", 20, 15, 5)
+    default_inventory.add_item("Sugar", 30, 20, 8)
+    default_inventory.display_inventory()
     #current_inventory = CafeInventory()
     #current_inventory.add_item("Coffee Beans", 50, 10)
     #current_inventory.add_item("Milk", 20, 5)

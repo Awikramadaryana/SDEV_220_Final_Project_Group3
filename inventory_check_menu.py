@@ -7,7 +7,7 @@ Purpose: Provide Inventory interaction menu
 
 import tkinter as tk
 from cafeInventory import cafe_inventory
-from inventory_master import CafeInventory, InventoryItem, inventory
+from inventory_master import CafeInventory, InventoryItem, default_inventory
 from settingsMenu import default_settings
 
 class inventoryMenu(tk.Tk):
