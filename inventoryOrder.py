@@ -75,13 +75,12 @@ class OrderMenu(tk.Tk):
         if name in default_inventory.cafe_inventory:
             item = default_inventory.cafe_inventory[name]
             item.add_stock(int(qty))
-            print(item.stock)
         else:
             print(f"Item '{name}' not found in inventory.")
             return
 
         print("The item is : " + name)
-        print(qty)
+        print("The item quantity is : " + qty)
         
         
         self.nameStr.set("")
