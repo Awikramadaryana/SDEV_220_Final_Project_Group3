@@ -18,6 +18,21 @@ class OrderMenu(tk.Tk):
         #declare string variables to store item details
         self.nameStr = tk.StringVar()
         self.qtyStr = tk.StringVar()
+        
+        #creating a list of variables for a dropdown menu
+        for i, name in enumerate(default_inventory.cafe_inventory.keys()):
+            self.stock_items.append(name)
+            print(name)
+            
+            # prepping options for the drop down menu
+        self.selectedOption = tk.StringVar(self)
+        self.selectedOption.set(self.stock_items[0])
+        
+        # leftover from attempt to make a quick inventory menu, decided against it for the sake of getting project completed
+        # Todo: Figure out how to make this work alter
+        #self.selectedOption.set("Inventory At a Glance")
+        self.selectedData = tk.IntVar(self)
+        self.selectedIndex = 0
 
         #Label Declarations
         self.orderLabel = tk.Label(self, text="Create New Order")
@@ -32,7 +47,8 @@ class OrderMenu(tk.Tk):
         self.orderLabel.pack()
 
         self.nameLabel.pack()
-        self.nameEntry.pack()
+        tk.OptionMenu(self, self.selectedOption, *self.stock_items).pack()
+        #self.nameEntry.pack()
 
         self.itemQty.pack()
         self.qtyEntry.pack()
