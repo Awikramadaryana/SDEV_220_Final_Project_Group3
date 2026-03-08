@@ -70,6 +70,15 @@ class OrderMenu(tk.Tk):
         #    f.write(qty)
         #with open("OrderList.txt", "a") as f:
         #    f.write(name)
+        
+        name = self.selectedOption.get()
+        
+        if name in default_inventory.cafe_inventory:
+            item = default_inventory.cafe_inventory[name]
+            item.add_stock(int(qty))
+        else:
+            print(f"Item '{name}' not found in inventory.")
+            return
 
         default_inventory.add_stock(name, int(qty))
 
