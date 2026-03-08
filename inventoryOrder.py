@@ -1,5 +1,6 @@
 # Inventory Ordering System
 # This will receive user input through textboxes and write to a text file
+# A drop down menu has been added to select current items in inventory
 
 import tkinter as tk
 from settingsMenu import default_settings
@@ -7,8 +8,10 @@ from tkinter import ttk
 from inventory_master import InventoryItem as inv
 from inventory_master import default_inventory
 
+#Construct new class OrderMenu to be called via main menu
 class OrderMenu(tk.Tk):
     def __init__(self, screenName = None, baseName = None, className = "Tk", useTk = True, sync = False, use = None):
+        #Initialize main UI
         super().__init__(screenName, baseName, className, useTk, sync, use)
         self.title("Inventory Menu")
         self.geometry("500x500")
@@ -24,13 +27,9 @@ class OrderMenu(tk.Tk):
             self.stock_items.append(name)
             print(name)
             
-            # prepping options for the drop down menu
+        # prepping options for the drop down menu
         self.selectedOption = tk.StringVar(self)
         self.selectedOption.set(self.stock_items[0])
-        
-        # leftover from attempt to make a quick inventory menu, decided against it for the sake of getting project completed
-        # Todo: Figure out how to make this work alter
-        #self.selectedOption.set("Inventory At a Glance")
         self.selectedData = tk.IntVar(self)
         self.selectedIndex = 0
 
@@ -43,12 +42,11 @@ class OrderMenu(tk.Tk):
         self.nameEntry = ttk.Entry(self, textvariable = self.nameStr)
         self.qtyEntry = ttk.Entry(self, textvariable = self.qtyVar)
 
-        #UI elements
+        #Load in Labels and Buttons
         self.orderLabel.pack()
 
         self.nameLabel.pack()
         tk.OptionMenu(self, self.selectedOption, *self.stock_items).pack()
-        #self.nameEntry.pack()
 
         self.itemQty.pack()
         self.qtyEntry.pack()
@@ -61,15 +59,6 @@ class OrderMenu(tk.Tk):
     #Function to submit currently held variables into dictionary
     def submit(self):
         qty=self.qtyVar.get()
-        
-        #Write input to file
-        #with open("OrderList.txt", "a") as f:
-        #    f.write(item)
-        #with open("OrderList.txt", "a") as f:
-        #    f.write(qty)
-        #with open("OrderList.txt", "a") as f:
-        #    f.write(name)
-        
         name = self.selectedOption.get()
         
         if name in default_inventory.cafe_inventory:
@@ -79,6 +68,7 @@ class OrderMenu(tk.Tk):
             print(f"Item '{name}' not found in inventory.")
             return
 
+        #print check
         print("The item is : " + name)
         print("The item quantity is : " + qty)
         
