@@ -59,14 +59,18 @@ class addMenu(tk.Tk):
     #Function to submit currently held variables into dictionary
     def submit(self):
         name = self.nameStr.get()
-        maximum = self.maxStr.get()
-        current = self.currentStr.get()
-        minimum = self.minStr.get()
+        maximum = int(self.maxStr.get())
+        current = int(self.currentStr.get())
+        minimum = int(self.minStr.get())
 
-        print("The item is : " + name)
-        print("The max quantity is : " + maximum)
-        print("The current quantity is : " + current)
-        print("The min quantity is : " + minimum)
+        print("The item is : " + str(name))
+        print("The max quantity is : " + str(maximum))
+        print("The current quantity is : " + str(current))
+        print("The min quantity is : " + str(minimum))
+
+        #Construct Argument
+        default_inventory.add_item(name, maximum, current, minimum)
+        print("pass")
 
         #Set stored string variables back to empty strings
         self.nameStr.set("")
