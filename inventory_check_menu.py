@@ -61,7 +61,7 @@ class inventoryMenu(tk.Tk):
         self.output_label.config(text=f'You selected: {selection}')
         need_to_order = False
         if selected_item.stock <= selected_item.reorder_level:
-            need_to_order = True
+            color = "red"
 
         #Creating formatted output
         output_text = (f"Item: {selected_item.name}\n"
@@ -69,3 +69,11 @@ class inventoryMenu(tk.Tk):
                        f"Current Stock: {selected_item.stock}\n"
                        f"Reorder Level: {selected_item.reorder_level}\n")
         self.output_label.config(text=output_text)
+        
+        self.current_stock_label.config(text=f"Current Stock: {selected_item.stock}", fg=color)
+        self.reorder_level_label.config(text=f"Reorder Level: {selected_item.reorder_level}")
+        
+        self.item_label.pack()
+        self.full_stock_label.pack()
+        self.current_stock_label.pack()
+        self.reorder_level_label.pack()
