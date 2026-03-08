@@ -17,7 +17,7 @@ class OrderMenu(tk.Tk):
 
         #declare string variables to store item details
         self.nameStr = tk.StringVar()
-        self.qtyStr = tk.StringVar()
+        self.qtyVar = tk.IntVar()
         
         #creating a list of variables for a dropdown menu
         for i, name in enumerate(default_inventory.cafe_inventory.keys()):
@@ -41,7 +41,7 @@ class OrderMenu(tk.Tk):
 
         #User Entry Declarations
         self.nameEntry = ttk.Entry(self, textvariable = self.nameStr)
-        self.qtyEntry = ttk.Entry(self, textvariable = self.qtyStr)
+        self.qtyEntry = ttk.Entry(self, textvariable = self.qtyVar)
 
         #UI elements
         self.orderLabel.pack()
@@ -61,7 +61,7 @@ class OrderMenu(tk.Tk):
     #Function to submit currently held variables into txt file
     def submit(self):
         name = self.nameStr.get()
-        qty=self.qtyStr.get()
+        qty=self.qtyVar.get()
         
         #Write input to file
         #with open("OrderList.txt", "a") as f:
@@ -75,16 +75,15 @@ class OrderMenu(tk.Tk):
         
         if name in default_inventory.cafe_inventory:
             item = default_inventory.cafe_inventory[name]
-            item.add_stock(int(qty))
+            item.add_stock(qty)
+            print(item.stock)
         else:
             print(f"Item '{name}' not found in inventory.")
             return
 
-        default_inventory.add_stock(name, int(qty))
-
         print("The item is : " + name)
-        print("The Quantity is : " + qty)
+        print(qty)
         
         
         self.nameStr.set("")
-        self.qtyStr.set("")
+        self.qtyVar.set("")
