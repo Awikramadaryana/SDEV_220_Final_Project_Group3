@@ -7,7 +7,9 @@ class InventoryItem:
         self.reorder_level = reorder_level
 
     def add_stock(self, amount):
-        self.stock += amount
+        print("Add stock has been called")
+        self.stock = self.stock + amount
+        print(self.stock)
 
     def remove_stock(self, amount):
         if amount <= self.stock:
