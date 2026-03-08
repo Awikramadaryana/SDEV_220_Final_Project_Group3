@@ -45,6 +45,9 @@ class addMenu(tk.Tk):
         self.itemMax.pack()
         self.maxEntry.pack()
 
+        self.itemCurrent.pack()
+        self.currentEntry.pack()
+
         self.itemMinimum.pack()
         self.minEntry.pack()
 
