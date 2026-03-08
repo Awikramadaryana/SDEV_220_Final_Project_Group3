@@ -12,7 +12,6 @@ root.geometry("500x500")
 
 #declare string variables to store item details
 nameStr = tk.StringVar()
-codeStr = tk.StringVar()
 qtyStr = tk.StringVar()
 
 #Label Declarations
@@ -44,7 +43,6 @@ def submit():
     
     
     nameStr.set("")
-    codeStr.set("")
     qtyStr.set("")
 
 
