@@ -27,7 +27,7 @@ def main():
 
     # creating welcome label and buttons
     welcomeMessage = tk.Label(mainMenu, text="Welcome to Coffee Shop!")
-    orderButton = tk.Button(mainMenu, text="Order", command=lambda: inventoryOrder.OrderMenu())
+    orderButton = tk.Button(mainMenu, text="Order Restock", command=lambda: inventoryOrder.OrderMenu())
     inventoryButton = tk.Button(mainMenu, text="Inventory", command=lambda: inventory_check_menu.inventoryMenu())
     settingsButton = tk.Button(mainMenu, text ="Settings", command=lambda: settingsMenu.SettingsMenu())
     exitButton = tk.Button(mainMenu, text="Exit", command=mainMenu.quit)
