@@ -3,7 +3,7 @@
 
 import tkinter as tk
 from tkinter import ttk
-from inventory_master import CafeInventory
+from inventory_master import InventoryItem as inv
 
 
 root = tk.Tk()
