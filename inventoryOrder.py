@@ -18,30 +18,28 @@ qtyStr = tk.StringVar()
 #Label Declarations
 orderLabel = tk.Label(root, text="Create New Order")
 nameLabel = tk.Label(root, text = "Enter Item name")
-itemCode = tk.Label(root, text="Insert Item Code")
 itemQty = tk.Label(root, text="Insert Item Quantity")
 
 #User Entry Declarations
 nameEntry = ttk.Entry(root, textvariable = nameStr)
-codeEntry = ttk.Entry(root, textvariable = codeStr)
 qtyEntry = ttk.Entry(root, textvariable = qtyStr)
 
 #Function to submit currently held variables into txt file
 def submit():
     name = nameStr.get()
-    item=codeStr.get()
     qty=qtyStr.get()
     
     #Write input to file
-    with open("OrderList.txt", "a") as f:
-        f.write(item)
-    with open("OrderList.txt", "a") as f:
-        f.write(qty)
-    with open("OrderList.txt", "a") as f:
-        f.write(name)
+    #with open("OrderList.txt", "a") as f:
+    #    f.write(item)
+    #with open("OrderList.txt", "a") as f:
+    #    f.write(qty)
+    #with open("OrderList.txt", "a") as f:
+    #    f.write(name)
+
+    inv.add_stock(name, qty)
 
     print("The item is : " + name)
-    print("The item code : " + item)
     print("The Quantity is : " + qty)
     
     
@@ -59,9 +57,6 @@ orderLabel.pack()
 
 nameLabel.pack()
 nameEntry.pack()
-
-itemCode.pack()
-codeEntry.pack()
 
 itemQty.pack()
 qtyEntry.pack()
