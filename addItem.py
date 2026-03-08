@@ -7,8 +7,10 @@ from tkinter import ttk
 from inventory_master import InventoryItem as inv
 from inventory_master import default_inventory
 
+# Construct new class addMenu to be called 
 class addMenu(tk.Tk):
     def __init__(self, screenName = None, baseName = None, className = "Tk", useTk = True, sync = False, use = None):
+        #initialize UI
         super().__init__(screenName, baseName, className, useTk, sync, use)
         self.title("Inventory Menu")
         self.geometry("500x500")
@@ -36,7 +38,7 @@ class addMenu(tk.Tk):
         self.currentEntry = ttk.Entry(self, textvariable= self.currentStr)
         self.minEntry = ttk.Entry(self, textvariable= self.minStr)
 
-        #UI elements
+        #Load Input Labels and Buttons
         self.orderLabel.pack()
 
         self.nameLabel.pack()
@@ -63,6 +65,7 @@ class addMenu(tk.Tk):
         current = int(self.currentStr.get())
         minimum = int(self.minStr.get())
 
+        #Print Checks
         print("The item is : " + str(name))
         print("The max quantity is : " + str(maximum))
         print("The current quantity is : " + str(current))
@@ -70,6 +73,7 @@ class addMenu(tk.Tk):
 
         #Construct Argument
         default_inventory.add_item(name, maximum, current, minimum)
+        #add item check
         print("pass")
 
         #Set stored string variables back to empty strings
