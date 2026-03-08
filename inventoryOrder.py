@@ -16,8 +16,8 @@ class OrderMenu(tk.Tk):
         self.configure(bg=default_settings.background)
 
         #declare string variables to store item details
-        self.nameStr = tk.StringVar()
-        self.qtyVar = tk.IntVar()
+        self.nameStr = tk.StringVar(self)
+        self.qtyVar = tk.StringVar(self)
         
         #creating a list of variables for a dropdown menu
         for i, name in enumerate(default_inventory.cafe_inventory.keys()):
@@ -58,9 +58,8 @@ class OrderMenu(tk.Tk):
         sub_btn.pack()
         
 
-    #Function to submit currently held variables into txt file
+    #Function to submit currently held variables into dictionary
     def submit(self):
-        name = self.nameStr.get()
         qty=self.qtyVar.get()
         
         #Write input to file
@@ -75,7 +74,7 @@ class OrderMenu(tk.Tk):
         
         if name in default_inventory.cafe_inventory:
             item = default_inventory.cafe_inventory[name]
-            item.add_stock(qty)
+            item.add_stock(int(qty))
             print(item.stock)
         else:
             print(f"Item '{name}' not found in inventory.")
