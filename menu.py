@@ -31,7 +31,6 @@ def main():
     orderButton = tk.Button(mainMenu, text="Order Restock", command=lambda: inventoryOrder.OrderMenu())
     addButton = tk.Button(mainMenu, text= "Add new Item", command=lambda: addItem.addMenu())
     inventoryButton = tk.Button(mainMenu, text="Inventory", command=lambda: inventory_check_menu.inventoryMenu())
-    addItemButton = tk.Button(mainMenu, text="Add Item To Inventory")
     settingsButton = tk.Button(mainMenu, text ="Settings", command=lambda: settingsMenu.SettingsMenu())
     exitButton = tk.Button(mainMenu, text="Exit", command=mainMenu.quit)
 
@@ -40,7 +39,6 @@ def main():
     orderButton.pack()
     addButton.pack()
     inventoryButton.pack()
-    addItemButton.pack()
     settingsButton.pack()
     exitButton.pack()
     mainMenu.mainloop()
