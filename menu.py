@@ -29,6 +29,7 @@ def main():
     welcomeMessage = tk.Label(mainMenu, text="Welcome to Coffee Shop!")
     orderButton = tk.Button(mainMenu, text="Order", command=lambda: inventoryOrder.OrderMenu())
     inventoryButton = tk.Button(mainMenu, text="Inventory", command=lambda: inventory_check_menu.inventoryMenu())
+    addItemButton = tk.Button(mainMenu, text="Add Item To Inventory")
     settingsButton = tk.Button(mainMenu, text ="Settings", command=lambda: settingsMenu.SettingsMenu())
     exitButton = tk.Button(mainMenu, text="Exit", command=mainMenu.quit)
 
@@ -36,15 +37,13 @@ def main():
     welcomeMessage.pack()
     orderButton.pack()
     inventoryButton.pack()
+    addItemButton.pack()
     settingsButton.pack()
     exitButton.pack()
     mainMenu.mainloop()
     
 
 if __name__ == '__main__':
-    default_inventory.add_item("Coffee Beans", 50, 25, 10)
-    default_inventory.add_item("Milk", 20, 15, 5)
-    default_inventory.add_item("Sugar", 30, 20, 8)
     default_inventory.display_inventory()
     #current_inventory = CafeInventory()
     #current_inventory.add_item("Coffee Beans", 50, 10)
