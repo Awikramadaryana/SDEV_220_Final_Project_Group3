@@ -19,7 +19,7 @@ class inventoryMenu(tk.Tk):
         self.configure(bg=default_settings.background)
         
         
-        for i, name in enumerate(inventory.cafe_inventory.keys()):
+        for i, name in enumerate(default_inventory.cafe_inventory.keys()):
             self.stock_items.append(name)
             print(name)
 
@@ -38,7 +38,7 @@ class inventoryMenu(tk.Tk):
         tk.Label(self, text="Pick an Inventory Item").pack()
         tk.OptionMenu(self, self.selectedOption, *self.stock_items, command=self.updateMenu).pack()
         if self.selectedOption == "Inventory at a Flance":
-            for i, full_stock in enumerate(inventory.cafe_inventory.keys()):
+            for i, full_stock in enumerate(default_inventory.cafe_inventory.keys()):
                 print("The quick inventory statement was called")
             self.quick_inventory = tk.Label.config()
         self.output_label = tk.Label(self, text="Item Pending")
@@ -49,10 +49,10 @@ class inventoryMenu(tk.Tk):
     def create_widgets(self):
         paddings = {'padx': 5, 'pady': 5}
 
-    # forgot for updateMenu that you can call a command without passing the info from tk.OptionMenu.
+    # forgot for updateMenu that you can call a command without passings the info from tk.OptionMenu.
     def updateMenu(self, selection):
         print("Tesing updateMenu has been called")
-        selected_item = inventory.cafe_inventory[selection]
+        selected_item = default_inventory.cafe_inventory[selection]
         print(selected_item)
         self.output_label.config(text=f'You selected: {selection}')
         need_to_order = False
